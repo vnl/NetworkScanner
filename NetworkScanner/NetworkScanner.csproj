@@ -80,10 +80,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Messaging\NavigationMessage.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="ViewModel\AppearanceViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\NetListViewModel.cs" />
+    <Compile Include="ViewModel\Network.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\Setngs\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>

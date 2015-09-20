@@ -8,8 +8,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              DataContext="{Binding Home, Source={StaticResource Locator}}">
-    <DockPanel>
-        <Label DockPanel.Dock="Top" Content="{Binding Info}" />
-        <mui:ModernButton Content="Click" Command="{Binding NavigateToNetListCommand}" />
-    </DockPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--<Label DockPanel.Dock="Top" Content="{Binding Info}" />
+        <mui:ModernButton Content="Click" Command="{Binding NavigateToNetListCommand}" />-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Interfaces: " Target="{Binding ElementName=cmbInterface}"/>
+            <ComboBox Grid.Column="1" x:Name="cmbInterface" ItemsSource="{Binding Interfaces}"
+                      SelectedItem="{Binding SelectedInterface}"/>
+        </Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1">
+            <TextBlock x:Name="txtBlkDetails" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+            <!--<Border BorderBrush="{DynamicResource ButtonBorder}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,16">
+                <mui:ModernFrame x:Name="Frame" Content="{Binding Info}" 
+                                     Width="Auto" Height="Auto" Padding="4"/>
+            </Border>-->
+            <ListBox ItemsSource="{Binding InterfaceDetails}"/>
+        </StackPanel>
+    </Grid>
 </UserControl>

@@ -26,6 +26,7 @@ namespace NetworkScanner.Views
         public Home()
         {
             InitializeComponent();
+            txtBlkDetails.Text = "Details - " + Environment.UserName;
             Messenger.Default.Register<NavigationMessage>(this, p =>
             {
                 // Create a URI to the target page
