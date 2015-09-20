@@ -20,8 +20,8 @@
         </presentation:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>
 
-    <!--<mui:ModernWindow.TitleLinks>
-        <mui:Link DisplayName="settings" Source="Views/SettingsView.xaml" />
+    <mui:ModernWindow.TitleLinks>
+        <mui:Link DisplayName="settings" Source="Views/SettingsPg.xaml" />
         <mui:Link DisplayName="help" Source="http://mui.codeplex.com" />
-    </mui:ModernWindow.TitleLinks>-->
+    </mui:ModernWindow.TitleLinks>
 </mui:ModernWindow>
