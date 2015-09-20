@@ -45,7 +45,7 @@ namespace NetworkScanner.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<View1ViewModel>();
             SimpleIoc.Default.Register<View2ViewModel>();
-            //SimpleIoc.Default.Register<AppearanceViewModel>();
+            SimpleIoc.Default.Register<AppearanceViewModel>();
         }
 
         public MainViewModel Main
@@ -72,13 +72,13 @@ namespace NetworkScanner.ViewModel
             }
         }
 
-        //public AppearanceViewModel AVM
-        //{
-        //    get
-        //    {
-        //        return ServiceLocator.Current.GetInstance<AppearanceViewModel>();
-        //    }
-        //}
+        public AppearanceViewModel AVM
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<AppearanceViewModel>();
+            }
+        }
 
         public static void Cleanup()
         {
