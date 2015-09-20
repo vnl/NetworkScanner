@@ -12,10 +12,10 @@
         Height="350" Width="525">
     
     <mui:ModernWindow.MenuLinkGroups>
-        <presentation:LinkGroup DisplayName="Views">
+        <presentation:LinkGroup DisplayName="LAN">
             <presentation:LinkGroup.Links>
-                <presentation:Link DisplayName="View 1" Source="Views/View1.xaml"/>
-                <presentation:Link DisplayName="View 2" Source="Views/View2.xaml"/>
+                <presentation:Link DisplayName="home" Source="Views/Home.xaml"/>
+                <presentation:Link DisplayName="net list" Source="Views/NetList.xaml"/>
             </presentation:LinkGroup.Links>
         </presentation:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>

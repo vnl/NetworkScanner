@@ -82,8 +82,8 @@
     <Compile Include="Messaging\NavigationMessage.cs" />
     <Compile Include="ViewModel\AppearanceViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\View1ViewModel.cs" />
-    <Compile Include="ViewModel\View2ViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\NetListViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\Setngs\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
@@ -94,11 +94,11 @@
     <Compile Include="Views\SettingsPg.xaml.cs">
       <DependentUpon>SettingsPg.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\View1.xaml.cs">
-      <DependentUpon>View1.xaml</DependentUpon>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\View2.xaml.cs">
-      <DependentUpon>View2.xaml</DependentUpon>
+    <Compile Include="Views\NetList.xaml.cs">
+      <DependentUpon>NetList.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -124,11 +124,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\View1.xaml">
+    <Page Include="Views\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\View2.xaml">
+    <Page Include="Views\NetList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

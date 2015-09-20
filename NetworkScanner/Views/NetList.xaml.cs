@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace NetworkScanner.Views
 {
     /// <summary>
-    /// Interaction logic for View2.xaml
+    /// Interaction logic for NetList.xaml
     /// </summary>
-    public partial class View2 : UserControl
+    public partial class NetList : UserControl
     {
-        public View2()
+        public NetList()
         {
             InitializeComponent();
         }

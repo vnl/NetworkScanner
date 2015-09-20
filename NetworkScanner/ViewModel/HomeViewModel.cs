@@ -10,35 +10,35 @@ using System.Threading.Tasks;
 
 namespace NetworkScanner.ViewModel
 {
-    public class View1ViewModel
+    public class HomeViewModel
     {
-        public View1ViewModel()
+        public HomeViewModel()
         {
-            Info = "This is View 1";
+            Info = "Your Home Network";
             // Instantiate the RelayCommand.  This is much less verbose
             // than the default WPF Command declaration, and why
             // RelayCommands are nice to use.
-            NavigateToView2Command = new RelayCommand(NavigateToView2);
+            NavigateToNetListCommand = new RelayCommand(NavigateToNetList);
         }
 
         // Info property, for a label to be shown on the view
         public string Info { get; set; }
 
         // Declare the RelayCommand
-        public RelayCommand NavigateToView2Command { get; private set; }
+        public RelayCommand NavigateToNetListCommand { get; private set; }
 
         // Method to run when the command is executed
-        public void NavigateToView2()
+        public void NavigateToNetList()
         {
             // IMPLEMENT NAVIGATION HERE
-            // Get a reference to View2's ViewModel from the IoC container
-            View2ViewModel vm = SimpleIoc.Default.GetInstance<View2ViewModel>();
+            // Get a reference to NetList's ViewModel from the IoC container
+            NetListViewModel vm = SimpleIoc.Default.GetInstance<NetListViewModel>();
 
             // Set the Info string value to something different
-            vm.Info = "Initializing This Text from View1ViewModel";
+            vm.Info = "Initializing This Text from HomeViewModel";
 
             // Send the navigation message
-            Messenger.Default.Send<NavigationMessage>(new NavigationMessage() { TargetPage = "Views/View2.xaml" });
+            Messenger.Default.Send<NavigationMessage>(new NavigationMessage() { TargetPage = "Views/NetList.xaml" });
         }
     }
 }

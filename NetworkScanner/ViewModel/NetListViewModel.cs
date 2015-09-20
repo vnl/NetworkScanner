@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace NetworkScanner.ViewModel
 {
-    public class View2ViewModel
+    public class NetListViewModel
     {
-        public View2ViewModel()
+        public NetListViewModel()
         {
-            Info = "This is View 2";
+            Info = "This is Net List";
         }
 
         public string Info { get; set; }
