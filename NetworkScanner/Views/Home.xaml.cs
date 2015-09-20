@@ -19,11 +19,11 @@ using System.Windows.Shapes;
 namespace NetworkScanner.Views
 {
     /// <summary>
-    /// Interaction logic for View1.xaml
+    /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class View1 : UserControl
+    public partial class Home : UserControl
     {
-        public View1()
+        public Home()
         {
             InitializeComponent();
             Messenger.Default.Register<NavigationMessage>(this, p =>

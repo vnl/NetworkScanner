@@ -43,8 +43,8 @@ namespace NetworkScanner.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<View1ViewModel>();
-            SimpleIoc.Default.Register<View2ViewModel>();
+            SimpleIoc.Default.Register<HomeViewModel>();
+            SimpleIoc.Default.Register<NetListViewModel>();
             SimpleIoc.Default.Register<AppearanceViewModel>();
         }
 
@@ -56,19 +56,19 @@ namespace NetworkScanner.ViewModel
             }
         }
 
-        public View1ViewModel View1
+        public HomeViewModel Home
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<View1ViewModel>();
+                return ServiceLocator.Current.GetInstance<HomeViewModel>();
             }
         }
 
-        public View2ViewModel View2
+        public NetListViewModel NetList
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<View2ViewModel>();
+                return ServiceLocator.Current.GetInstance<NetListViewModel>();
             }
         }
 
