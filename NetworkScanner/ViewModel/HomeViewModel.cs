@@ -18,12 +18,14 @@ namespace NetworkScanner.ViewModel
         private Network _NetWork = null;
         private NetworkInterface[] _Inf = null;
         private string _selectedInterface;
-
         public event PropertyChangedEventHandler PropertyChanged;
+        private readonly ObservableCollection<string> lstInterfaceDetails = new ObservableCollection<string>();
+        private List<string> _Interfaces = new List<string>();
+
         private void RaisePropertyChanged(string propertyName)
         {
-            if (this.PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public List<string> Interfaces
@@ -37,29 +39,17 @@ namespace NetworkScanner.ViewModel
                 }
             }
         }
-        public List<string> _Interfaces = new List<string>();
-        public List<string> InterfaceDetails
+        public ObservableCollection<string> InterfaceDetails
         {
             get { return lstInterfaceDetails; }
-            set
-            {
-                if (lstInterfaceDetails != null)
-                {
-                    InterfaceDetails = lstInterfaceDetails;
-                }
-            }
-        }
-        public List<string> lstInterfaceDetails = new List<string>();
-        public HomeViewModel()
-        {
-            Info = "Your Home Network";
-            // Instantiate the RelayCommand.  This is much less verbose
-            // than the default WPF Command declaration, and why
-            // RelayCommands are nice to use.
-            NavigateToNetListCommand = new RelayCommand(NavigateToNetList);
-            _NetWork = new Network();
-            FillInterfaces();
-            LoadSettings();
+            //set
+            //{
+            //    if (lstInterfaceDetails != null)
+            //    {
+            //        InterfaceDetails = lstInterfaceDetails;
+            //        //RaisePropertyChanged("InterfaceDetails");
+            //    }
+            //}
         }
 
         public string SelectedInterface
@@ -69,31 +59,11 @@ namespace NetworkScanner.ViewModel
             {
                 if (_selectedInterface != value)
                 {
-                    _selectedInterface = value;                    
+                    _selectedInterface = value;
                     RaisePropertyChanged("SelectedInterface");
-                    LoadSettings();
+                    SetInterfaceDetails(_selectedInterface);
                 }
             }
-        }
-
-        // Info property, for a label to be shown on the view
-        public string Info { get; set; }
-
-        // Declare the RelayCommand
-        public RelayCommand NavigateToNetListCommand { get; private set; }
-
-        // Method to run when the command is executed
-        public void NavigateToNetList()
-        {
-            // IMPLEMENT NAVIGATION HERE
-            // Get a reference to NetList's ViewModel from the IoC container
-            NetListViewModel vm = SimpleIoc.Default.GetInstance<NetListViewModel>();
-
-            // Set the Info string value to something different
-            vm.Info = "Initializing This Text from HomeViewModel";
-
-            // Send the navigation message
-            Messenger.Default.Send<NavigationMessage>(new NavigationMessage() { TargetPage = "Views/NetList.xaml" });
         }
 
         private void FillInterfaces()
@@ -139,15 +109,38 @@ namespace NetworkScanner.ViewModel
             {
                 lstInterfaceDetails.Add(details[z]);
             }
-
-            //txtIpFrom.Clear();
-            //txtIpTo.Clear();
-
-            //if (_NetWork.Ip == null) return;
-
-            //txtIpFrom.Text = _NetWork.Ip.ToString();
-            //txtIpTo.Text = _NetWork.Ip.ToString();
-
         }
+
+        public HomeViewModel()
+        {
+            Info = "Your Home Network";
+            // Instantiate the RelayCommand.  This is much less verbose
+            // than the default WPF Command declaration, and why
+            // RelayCommands are nice to use.
+            NavigateToNetListCommand = new RelayCommand(NavigateToNetList);
+            _NetWork = new Network();
+            FillInterfaces();
+            LoadSettings();
+        }
+
+        // Info property, for a label to be shown on the view
+        public string Info { get; set; }
+
+        // Declare the RelayCommand
+        public RelayCommand NavigateToNetListCommand { get; private set; }
+
+        // Method to run when the command is executed
+        public void NavigateToNetList()
+        {
+            // IMPLEMENT NAVIGATION HERE
+            // Get a reference to NetList's ViewModel from the IoC container
+            NetListViewModel vm = SimpleIoc.Default.GetInstance<NetListViewModel>();
+
+            // Set the Info string value to something different
+            vm.Info = "Initializing This Text from HomeViewModel";
+
+            // Send the navigation message
+            Messenger.Default.Send<NavigationMessage>(new NavigationMessage() { TargetPage = "Views/NetList.xaml" });
+        }        
     }
 }
