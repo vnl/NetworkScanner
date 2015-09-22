@@ -4,10 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NetworkScanner.Views"
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              DataContext="{Binding NetList, Source={StaticResource Locator}}">
     <Grid>
-        <Label Content="{Binding Info}" />            
+        <mui:ModernTab Layout="List" Links="{Binding Path=IPList}"/>            
     </Grid>
 </UserControl>
