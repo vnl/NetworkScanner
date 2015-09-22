@@ -5,17 +5,18 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NetworkScanner.ViewModel
 {
-    class Network
+    public class Network
     {
         private Ping _Ping = null;
         private Hashtable _Interfaces = null;
+
         public Hashtable Interfaces { get { return _Interfaces; } }
+
         public IPAddress Ip { get; set; }
+
         private const string NOT_AVAILABLE = "n/a";
 
         public Network()
@@ -33,7 +34,10 @@ namespace NetworkScanner.ViewModel
 
         public PingReply SendPing(IPAddress pAddress, int pTimeout)
         {
-            if (pAddress == null) throw new Exception("Invalid IP");
+            if (pAddress == null)
+            {
+                throw new Exception("Invalid IP");
+            }
 
             _Ping = new Ping();
 
@@ -52,16 +56,25 @@ namespace NetworkScanner.ViewModel
 
         public void AddInterface(string pInfId, NetworkInterface pInf)
         {
-            if (pInfId == null) return;
+            if (pInfId == null)
+            {
+                return;
+            }
 
-            if (_Interfaces.ContainsKey(pInfId)) return;
+            if (_Interfaces.ContainsKey(pInfId))
+            {
+                return;
+            }
 
             _Interfaces.Add(pInfId, pInf);
         }
 
         public string[] GetInterfaceDetails(NetworkInterface pIf, ref List<IPAddressInformation> pAddressInformation)
         {
-            if (pIf == null) return null;
+            if (pIf == null)
+            {
+                return null;
+            }
 
             string[] details = new string[9];
 
@@ -77,7 +90,7 @@ namespace NetworkScanner.ViewModel
                 pAddressInformation.Add(curIp);
             }
 
-            //Details of Interface
+            // Details of Interface
             details[0] = "Id: " + pIf.Id;
             details[1] = "Name: " + pIf.Name;
             details[2] = "Type: " + pIf.NetworkInterfaceType.ToString();
@@ -88,7 +101,7 @@ namespace NetworkScanner.ViewModel
             details[7] = "Address: " + addresses.TrimEnd(',');
             details[8] = "Mask: " + masks.TrimEnd(',');
 
-            //Get IpV4 Address
+            // Get IpV4 Address
             var ipV4 = from a in pAddressInformation
                        where a.Address.AddressFamily == AddressFamily.InterNetwork
                        select a;

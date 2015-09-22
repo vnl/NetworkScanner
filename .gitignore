@@ -91,3 +91,4 @@ bld/
 *.pidb
 *.svclog
 *.scc
+*.Cache

@@ -25,7 +25,7 @@ namespace NetworkScanner.Views.Setngs
             InitializeComponent();
             abt.Text = "Network Scanner is a small utility that scans your wireless network and " +
                        "displays the list of all computers and devices that are currently connected to your network.\n" +
-                       "For every computer or device that is connected to your network, the following information is displayed: " + 
+                       "For every computer or device that is connected to your network, the following information is displayed: " +
                        "IP address, MAC address, the company that manufactured the network card, and optionally the computer name.\n" +
                        "You can also export the connected devices list into html/ xml / csv / text file, or copy the list to the clipboard " +
                        "and then paste into Excel or other spreadsheet application.";

@@ -4,7 +4,7 @@
       <vm:ViewModelLocator xmlns:vm="clr-namespace:NetworkScanner"
                            x:Key="Locator" />
   </Application.Resources>
-  
+
   In the View:
   DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
 
@@ -25,7 +25,7 @@ namespace NetworkScanner.ViewModel
     public class ViewModelLocator
     {
         /// <summary>
-        /// Initializes a new instance of the ViewModelLocator class.
+        /// Initializes a new instance of the <see cref="ViewModelLocator"/> class.
         /// </summary>
         public ViewModelLocator()
         {
