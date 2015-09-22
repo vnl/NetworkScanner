@@ -17,7 +17,7 @@ namespace NetworkScanner.ViewModel
     public class MainViewModel : ViewModelBase
     {
         /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
+        /// Initializes a new instance of the <see cref="MainViewModel"/> class.
         /// </summary>
         public MainViewModel()
         {
