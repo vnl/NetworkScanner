@@ -88,6 +88,7 @@
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\NetListViewModel.cs" />
     <Compile Include="ViewModel\Network.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\Setngs\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
